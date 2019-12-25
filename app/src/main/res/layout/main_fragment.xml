@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.rsp.ui.main.screens.main.MainViewModel"/>
+        <variable
+            name="appConstants"
+            type="com.example.rsp.AppConstants" />
+    </data>
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.screens.main.MainFragment">
+
+
+    <LinearLayout
+        android:id="@+id/human_vs_computer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/computer_vs_computer"
+        android:onClick="@{(view)->viewModel.onChoosingPlayMode(appConstants.HUMAN_VS_COMPUTER)}"
+        android:padding="@dimen/padding_5dp"
+        android:layout_marginBottom="@dimen/main_margin"
+        android:layout_marginEnd="@dimen/main_icon_size"
+        android:layout_marginStart="@dimen/main_icon_size"
+        android:background="@drawable/round_rect"
+        android:weightSum="3"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="@dimen/human_icon_size"
+            android:layout_height="@dimen/human_icon_size"
+            android:layout_weight="1"
+            android:src="@mipmap/human"/>
+        <ImageView
+            android:layout_width="@dimen/versus_icon_size"
+            android:layout_height="@dimen/versus_icon_size"
+            android:layout_weight="1"
+            android:src="@mipmap/versus"/>
+        <ImageView
+            android:layout_width="@dimen/main_icon_size"
+            android:layout_height="@dimen/main_icon_size"
+            android:layout_weight="1"
+            android:src="@mipmap/computer"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/choose_text_size"
+        style="@style/ButtonTextStyle"
+        android:textStyle="italic"
+        android:text="@string/choose"/>
+
+
+    <LinearLayout
+        android:id="@+id/computer_vs_computer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/human_vs_computer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="@{(view)->viewModel.onChoosingPlayMode(appConstants.COMPUTER_VS_COMPUTER)}"
+        android:layout_marginTop="@dimen/main_margin"
+        android:padding="@dimen/padding_10dp"
+        android:layout_marginEnd="@dimen/main_icon_size"
+        android:layout_marginStart="@dimen/main_icon_size"
+        android:background="@drawable/round_rect"
+        android:weightSum="3"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="@dimen/main_icon_size"
+            android:layout_height="@dimen/main_icon_size"
+            android:layout_weight="1"
+            android:src="@mipmap/computer"/>
+        <ImageView
+            android:layout_width="@dimen/versus_icon_size"
+            android:layout_height="@dimen/versus_icon_size"
+            android:layout_weight="1"
+            android:src="@mipmap/versus"/>
+        <ImageView
+            android:layout_width="@dimen/main_icon_size"
+            android:layout_height="@dimen/main_icon_size"
+            android:layout_weight="1"
+            android:src="@mipmap/computer"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
