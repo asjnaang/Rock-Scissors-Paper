@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">RSP</string>
     <string name="choose">Choose to Play</string>
+    <string name="mode">MODE</string>
+    <string name="play">PLAY</string>
+    <string name="zero">0</string>
+    <string name="go">GO</string>
+    <string name="play_again">PLAY AGAIN</string>
 </resources>

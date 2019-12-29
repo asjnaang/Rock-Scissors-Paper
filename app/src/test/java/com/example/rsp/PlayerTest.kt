@@ -1,10 +1,11 @@
 package com.example.rsp
 
+import com.example.rsp.helper.Utils.getRandomPlayer
+import com.example.rsp.helper.getRandomSelection
 import com.example.rsp.model.Player
 import org.junit.Test
 
 import org.junit.Assert.*
-import kotlin.random.Random
 
 class PlayerTest {
 
@@ -30,8 +31,8 @@ class PlayerTest {
 
     @Test
     fun checkResult() {
-        val user = getRandomSelection()
-        val computer = getRandomSelection()
+        val user = getRandomPlayer()
+        val computer = getRandomPlayer()
         when (user.isWon(computer)) {
             0 -> {
                 assertTrue(user == computer)
@@ -47,10 +48,5 @@ class PlayerTest {
                 assertFalse(user.getLower().contains(computer))
             }
         }
-    }
-
-
-    fun getRandomSelection(): Player {
-        return Player.values()[Random.nextInt(3)]
     }
 }

@@ -1,10 +1,9 @@
 package com.example.rsp.ui.main.screens.main
 
-import androidx.lifecycle.ViewModel
-import com.example.rsp.helper.NavigationListener
+import android.app.Application
+import com.example.rsp.model.BaseViewModel
 
-class MainViewModel : ViewModel() {
-    lateinit var navigationListener: NavigationListener
+class MainViewModel(application: Application) : BaseViewModel(application) {
     fun onChoosingPlayMode(id: Int) {
         navigationListener?.goNext(id)
     }
