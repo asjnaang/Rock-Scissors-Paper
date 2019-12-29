@@ -19,6 +19,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".ui.main.screens.main.MainFragment">
 
 
@@ -33,8 +34,8 @@
         android:onClick="@{(view)->viewModel.onChoosingPlayMode(appConstants.HUMAN_VS_COMPUTER)}"
         android:padding="@dimen/padding_5dp"
         android:layout_marginBottom="@dimen/main_margin"
-        android:layout_marginEnd="@dimen/main_icon_size"
-        android:layout_marginStart="@dimen/main_icon_size"
+        android:layout_marginEnd="@dimen/margin_50dp"
+        android:layout_marginStart="@dimen/margin_50dp"
         android:background="@drawable/round_rect"
         android:weightSum="3"
         android:gravity="center"
@@ -80,8 +81,8 @@
         android:onClick="@{(view)->viewModel.onChoosingPlayMode(appConstants.COMPUTER_VS_COMPUTER)}"
         android:layout_marginTop="@dimen/main_margin"
         android:padding="@dimen/padding_10dp"
-        android:layout_marginEnd="@dimen/main_icon_size"
-        android:layout_marginStart="@dimen/main_icon_size"
+        android:layout_marginEnd="@dimen/margin_50dp"
+        android:layout_marginStart="@dimen/margin_50dp"
         android:background="@drawable/round_rect"
         android:weightSum="3"
         android:gravity="center"

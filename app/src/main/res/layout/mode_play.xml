@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.rsp.ui.main.screens.playground.PlaygroundViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/countdown"
+            android:layout_width="@dimen/ring_size"
+            android:layout_height="@dimen/ring_size"
+            android:background="@drawable/ring"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.isCountDownTimerEnabled()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/countdown_tv"
+                style="@style/DarkButtonTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/zero"
+                android:textSize="@dimen/countdown_timer_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/play_mode"
+            android:layout_width="@dimen/ring_size"
+            android:layout_height="@dimen/ring_size"
+            android:background="@drawable/ring"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.isPlayModeEnabled()}"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/DarkButtonTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(view)->viewModel.goBack()}"
+                android:text="@string/mode" />
+
+            <TextView
+                style="@style/DarkButtonTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(view)->viewModel.updatePlayModeEnabled()}"
+                android:text="@{viewModel.getPlayButtonText()}" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
