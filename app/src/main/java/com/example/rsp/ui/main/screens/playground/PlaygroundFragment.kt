@@ -9,16 +9,15 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.addTextChangedListener
-import androidx.databinding.ObservableField
 import androidx.fragment.app.Fragment
 import com.example.rsp.AppConstants
 import com.example.rsp.R
 import com.example.rsp.databinding.PlaygroundFragmentBinding
 import com.example.rsp.helper.NavigationListener
 import com.example.rsp.helper.Utils
+import com.example.rsp.helper.addOnPropertyChanged
 import com.example.rsp.helper.filterNull
 import kotlinx.android.synthetic.main.mode_play.*
 import kotlinx.android.synthetic.main.scores.*
@@ -30,6 +29,7 @@ class PlaygroundFragment : Fragment(), NavigationListener, PlaygroundViewListene
         fun newInstance() = PlaygroundFragment()
     }
 
+    private val delay = 2000L
     private var selectedMode = 0
     private var timer = 3
     private val viewModel: PlaygroundViewModel by viewModel()
@@ -48,8 +48,21 @@ class PlaygroundFragment : Fragment(), NavigationListener, PlaygroundViewListene
         viewModel.navigationListener = this
         viewModel.playgroundViewListener = this
         selectedMode = arguments?.getInt(AppConstants.SELECTED_MODE).filterNull()
-        viewModel.initObservables()
+        initObservables()
         initAnimations()
+    }
+
+    private fun initObservables() {
+        viewModel.isCountDownTimerEnabled.addOnPropertyChanged {
+            if (it.get() == View.VISIBLE) {
+                viewModel.resetUserSelection()
+                countdown_tv.text = timer.toString()
+                if (selectedMode == AppConstants.HUMAN_VS_COMPUTER) viewModel.isUserClickEnabled.set(
+                    true
+                )
+                startCountDownAnimation()
+            }
+        }
     }
 
     private fun initAnimations() {
@@ -104,7 +117,7 @@ class PlaygroundFragment : Fragment(), NavigationListener, PlaygroundViewListene
         countdown_tv.clearAnimation()
         Handler().postDelayed({
             viewModel.updateScores()
-        }, 2000)
+        }, delay)
     }
 
     private fun triggerComputerSelection() {
@@ -125,36 +138,28 @@ class PlaygroundFragment : Fragment(), NavigationListener, PlaygroundViewListene
         }
     }
 
-    override fun onCountDownTimerChanged(it: ObservableField<Int>) {
-        if (it.get() == View.VISIBLE) {
-            viewModel.resetUserSelection()
-            countdown_tv.text = timer.toString()
-            viewModel.isUserClickEnabled.set(true)
-            startCountDownAnimation()
-        }
-    }
-
-    override fun showWinningAnimation(userWon: Boolean) {
+    override fun showWinningAnimation(result: Int) {
         val animation = AnimationUtils.loadAnimation(activity, R.anim.scale_down)
         animation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationRepeat(p0: Animation?) {}
             override fun onAnimationEnd(p0: Animation?) {
-                if (!userWon) {
-                    Toast.makeText(
-                        activity, activity?.getString(R.string.choose_wisely),
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
                 Handler().postDelayed({
                     viewModel.updatePlayModeEnabled()
-                }, 2000)
+                }, delay)
             }
 
             override fun onAnimationStart(p0: Animation?) {
                 countdown_tv.text =
-                    getString(if (userWon) R.string.you_win else R.string.you_lose)
+                    getString(
+                        when (result) {
+                            1 -> R.string.you_win
+                            -1 -> R.string.you_lose
+                            else -> R.string.its_a_tie
+                        }
+                    )
             }
         })
         countdown_tv.startAnimation(animation)
     }
+
 }

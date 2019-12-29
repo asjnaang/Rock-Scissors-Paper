@@ -62,8 +62,6 @@
         app:layout_constraintStart_toEndOf="@id/computer_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="@dimen/main_icon_size"
-        android:layout_marginLeft="@dimen/main_icon_size"
         android:text="@{Integer.toString(viewModel.getComputerScore())}"
         style="@style/ScoreTextStyle"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

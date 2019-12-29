@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="@{(view)->viewModel.updatePlayModeEnabled()}"
-                android:text="@{viewModel.getPlayButtonText()}" />
+                android:text="@{viewModel.getRoundScore() > 0 ? @string/play_again : @string/play}" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
