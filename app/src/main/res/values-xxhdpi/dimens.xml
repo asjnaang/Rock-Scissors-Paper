@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="main_icon_size">40dp</dimen>
-    <dimen name="versus_icon_size">25dp</dimen>
-    <dimen name="human_icon_size">50dp</dimen>
-    <dimen name="choose_text_size">20sp</dimen>
-    <dimen name="main_margin">50dp</dimen>
-    <dimen name="ring_size">150dp</dimen>
-    <dimen name="score_text_size">25sp</dimen>
-    <dimen name="countdown_timer_size">30sp</dimen>
+    <dimen name="main_icon_size">35dp</dimen>
+    <dimen name="versus_icon_size">22dp</dimen>
+    <dimen name="human_icon_size">40dp</dimen>
+    <dimen name="choose_text_size">18sp</dimen>
+    <dimen name="main_margin">40dp</dimen>
+    <dimen name="ring_size">120dp</dimen>
+    <dimen name="score_text_size">21sp</dimen>
+    <dimen name="countdown_timer_size">22sp</dimen>
 
 <!--    padding size-->
-    <dimen name="units2">20dp</dimen>
-    <dimen name="units1">10dp</dimen>
-    <dimen name="units0p5">5dp</dimen>
-    <dimen name="units10">100dp</dimen>
-    <dimen name="units8">80dp</dimen>
-    <dimen name="units7p5">75dp</dimen>
-    <dimen name="units6">60dp</dimen>
-    <dimen name="units5">50dp</dimen>
-    <dimen name="units9">90dp</dimen>
+    <dimen name="units2">15dp</dimen>
+    <dimen name="units1">8dp</dimen>
+    <dimen name="units0p5">4dp</dimen>
+    <dimen name="units10">80dp</dimen>
+    <dimen name="units8">65dp</dimen>
+    <dimen name="units7p5">60dp</dimen>
+    <dimen name="units6">45dp</dimen>
+    <dimen name="units5">38dp</dimen>
+    <dimen name="units9">75dp</dimen>
+
+    <item name="scaleXBy" type="dimen" format="float">3.4</item>
+    <item name="scaleYBy" type="dimen" format="float">5.8</item>
 
 </resources>

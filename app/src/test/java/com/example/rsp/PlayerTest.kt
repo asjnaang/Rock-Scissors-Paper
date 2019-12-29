@@ -1,7 +1,6 @@
 package com.example.rsp
 
 import com.example.rsp.helper.Utils.getRandomPlayer
-import com.example.rsp.helper.getRandomSelection
 import com.example.rsp.model.Player
 import org.junit.Test
 

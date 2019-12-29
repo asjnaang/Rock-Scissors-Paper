@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RSP</string>
+    <string name="app_name">ROCK SCISSORS PAPER</string>
     <string name="choose">Choose to Play</string>
     <string name="mode">MODE</string>
     <string name="play">PLAY</string>
@@ -9,4 +9,5 @@
     <string name="choose_wisely">Choose Before CountDown Ends.</string>
     <string name="you_win">YOU WIN</string>
     <string name="you_lose">YOU LOSE</string>
+    <string name="its_a_tie">MATCH DRAW</string>
 </resources>
