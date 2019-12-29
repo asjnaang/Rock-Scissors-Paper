@@ -6,4 +6,7 @@
     <string name="zero">0</string>
     <string name="go">GO</string>
     <string name="play_again">PLAY AGAIN</string>
+    <string name="choose_wisely">Choose Before CountDown Ends.</string>
+    <string name="you_win">YOU WIN</string>
+    <string name="you_lose">YOU LOSE</string>
 </resources>

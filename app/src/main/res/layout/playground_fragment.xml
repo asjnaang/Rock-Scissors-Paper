@@ -27,7 +27,7 @@
             layout="@layout/inverted_rsp_images"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/margin_80dp"
+            android:layout_marginTop="@dimen/units8"
             app:layout_constraintTop_toBottomOf="@id/scores_layout" />
 
         <include
@@ -44,7 +44,7 @@
             layout="@layout/rsp_images"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/padding_10dp"
+            android:layout_marginBottom="@dimen/units1"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

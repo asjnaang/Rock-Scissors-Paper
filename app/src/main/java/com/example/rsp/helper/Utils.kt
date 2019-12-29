@@ -6,7 +6,7 @@ import kotlin.random.Random
 object Utils {
 
     fun getRandomPlayer(): Player {
-        return Player.values()[Random.nextInt(3)]
+        return Player.values()[Random.nextInt(1, 100)%3]
     }
 
 }

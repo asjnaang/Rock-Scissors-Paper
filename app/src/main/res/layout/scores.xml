@@ -10,8 +10,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/round_rect"
-    android:layout_margin="@dimen/padding_10dp"
-    android:padding="@dimen/padding_10dp">
+    android:layout_margin="@dimen/units1"
+    android:padding="@dimen/units1">
 
     <ImageView
         android:id="@+id/human_image"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="@id/computer_score"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="@dimen/margin_75dp"
+        android:layout_marginLeft="@dimen/units6"
         android:layout_width="@dimen/main_icon_size"
         android:layout_height="@dimen/main_icon_size"
         android:src="@mipmap/computer" />

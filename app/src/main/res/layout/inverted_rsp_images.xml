@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/rock_image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/units8"
+            android:layout_height="@dimen/units8"
             android:clickable="@{viewModel.isComputerClickEnabled()}"
             android:onClick="@{(view)->viewModel.onGameStateSelected(Player.ROCK, view, false)}"
             android:scaleY="-1"
@@ -28,8 +28,8 @@
 
         <ImageView
             android:id="@+id/scissors_image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/units8"
+            android:layout_height="@dimen/units8"
             android:clickable="@{viewModel.isComputerClickEnabled()}"
             android:onClick="@{(view)->viewModel.onGameStateSelected(Player.SCISSORS, view, false)}"
             android:scaleY="-1"
@@ -41,8 +41,8 @@
 
         <ImageView
             android:id="@+id/paper_image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/units8"
+            android:layout_height="@dimen/units8"
             android:clickable="@{viewModel.isComputerClickEnabled()}"
             android:onClick="@{(view)->viewModel.onGameStateSelected(Player.PAPER, view, false)}"
             android:scaleY="-1"
