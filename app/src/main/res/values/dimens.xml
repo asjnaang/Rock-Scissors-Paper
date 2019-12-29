@@ -5,18 +5,19 @@
     <dimen name="human_icon_size">50dp</dimen>
     <dimen name="choose_text_size">20sp</dimen>
     <dimen name="main_margin">50dp</dimen>
-
-<!--    padding size-->
-    <dimen name="padding_20dp">20dp</dimen>
-    <dimen name="padding_10dp">10dp</dimen>
-    <dimen name="padding_5dp">5dp</dimen>
-    <dimen name="margin_100dp">100dp</dimen>
-    <dimen name="margin_80dp">80dp</dimen>
-    <dimen name="margin_75dp">75dp</dimen>
-    <dimen name="margin_50dp">50dp</dimen>
     <dimen name="ring_size">150dp</dimen>
     <dimen name="score_text_size">25sp</dimen>
     <dimen name="countdown_timer_size">30sp</dimen>
-    <dimen name="margin_90dp">90dp</dimen>
+
+<!--    padding size-->
+    <dimen name="units2">20dp</dimen>
+    <dimen name="units1">10dp</dimen>
+    <dimen name="units0p5">5dp</dimen>
+    <dimen name="units10">100dp</dimen>
+    <dimen name="units8">80dp</dimen>
+    <dimen name="units7p5">75dp</dimen>
+    <dimen name="units6">60dp</dimen>
+    <dimen name="units5">50dp</dimen>
+    <dimen name="units9">90dp</dimen>
 
 </resources>
